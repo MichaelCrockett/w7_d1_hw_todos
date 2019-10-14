@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tasks: [
         {name: "Wash dishes", priority: "Low", isCompleted: false},
         {name: "Iron shirts", priority: "High", isCompleted: true},
-        {name: "Beans", priority: "Low", isCompleted: false}
+        {name: "Take dog for a walk", priority: "Low", isCompleted: false}
       ],
       newTask: {name: "", priority: "Low", isCompleted: false}
     },

@@ -16,7 +16,8 @@
         <span>{{ task.name }}</span>
         <span>{{ task.priority }}</span>
         <span v-if="task.isCompleted"> Completed!</span>
-        <button v-if="!task.isCompleted" v-on:click="completeTask(index)">Complete</button>
+        <button v-if="!task.isCompleted"
+        v-on:click="completeTask(index)">Complete</button>
       </li>
     </ul>
     <form v-on:submit.prevent="saveNewTask">
