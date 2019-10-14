@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/bundle.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Getting Stuff Done</h1>
+      <ul>
+      <li v-for="(task, index) in tasks" :class="task.isCompleted ? 'completed':'not-completed'" >
+        <span>{{ task.name }}</span>
+        <span v-if="task.isCompleted"> Completed!</span>
+        <button v-if="!task.isCompleted" v-on:click="completeTask(index)">Complete</button>
+      </li>
+    </ul>
+    <form v-on:submit.prevent="saveNewTask">
+      <label for="new-task">Add a new task:</label>
+      <input id="new-task" type="text" v-model="newTask.name" />
+      <input type="radio" name="priority" v-model="newTask.priority" value="High"> High Priority<br>
+      <input type="radio" name="priority" v-model="newTask.priority" value="Low"> Low Priority<br>
+
+      <input type="submit" value ="Save New Task" />
+    </div>
+  </body>
+</html>
